@@ -1,5 +1,7 @@
 package xyz.zhuht.algorithm.medium;
 
+import org.w3c.dom.ls.LSOutput;
+
 /**
  * 给你一个整数数组 nums ，请你找出数组中乘积最大的连续子数组（该子数组中至少包含一个数字），并返回该子数组所对应的乘积。
  * <p>
@@ -21,16 +23,33 @@ package xyz.zhuht.algorithm.medium;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class ChengJiZuiDaZiShuZu {
+  public static void main(String[] args) {
+    Solution solution = new Solution();
+    int[] a = {2,3,-2,4};
+    int[] b = {-2,0,-1};
+    System.out.println(solution.maxProduct(a));
+    System.out.println(solution.maxProduct(b));
+  }
 
 }
 
 class Solution {
   public int maxProduct(int[] nums) {
-    int max = nums[0];
-    int min = nums[0];
-    int temp = 1;
+    int max = Integer.MIN_VALUE;
+    int maxTemp = 1;
+    int minTemp = 1;
+
     for (Integer num : nums) {
-      temp *= num;
+      // 乘到负数时，会导致最大变最小。最小变最大
+      if(num<0){
+        maxTemp ^= minTemp;
+        minTemp ^= maxTemp;
+        maxTemp ^= minTemp;
+      }
+      maxTemp = Math.max(maxTemp*num,num);
+      minTemp = Math.min(minTemp*num,num);
+
+      max = Math.max(max,maxTemp);
 
     }
     return max;
