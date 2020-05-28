@@ -4,6 +4,7 @@ import org.junit.Test;
 import xyz.zhuht.algorithm.medium.HeKeBeiKZhengChuDeZiShuZu;
 import xyz.zhuht.algorithm.medium.LRUHuanCunJiZhi;
 import xyz.zhuht.algorithm.medium.XunZhaoChongFuShu;
+import xyz.zhuht.algorithm.medium.ZiFuChuanJieMa;
 
 /**
  * zhuhaitao
@@ -13,16 +14,31 @@ import xyz.zhuht.algorithm.medium.XunZhaoChongFuShu;
 
 public class MediumTest {
 
+
+  /**
+   * 394.字符串解码
+   */
+  @Test
+  public void ZiFuChuanJieMa() {
+    ZiFuChuanJieMa test = new ZiFuChuanJieMa();
+    String s = "3[a]2[bc]";
+    String s2 = "3[a2[c]]";
+    String s3 = "2[abc]3[cd]ef";
+    System.out.println(test.decodeString(s));
+    System.out.println(test.decodeString(s2));
+    System.out.println(test.decodeString(s3));
+  }
+
   /**
    * 974.和可被K整除的子数组
    */
   @Test
   public void HeKeBeiKZhengChuDeZiShuZuTest() {
     HeKeBeiKZhengChuDeZiShuZu test = new HeKeBeiKZhengChuDeZiShuZu();
-    int[] A = new int[]{4,5,0,-2,-3,1};
+    int[] A = new int[]{4, 5, 0, -2, -3, 1};
     int K = 5;
-    System.out.println(test.subarraysDivByK(A,K));
-    System.out.println(test.subarraysDivByK2(A,K));
+    System.out.println(test.subarraysDivByK(A, K));
+    System.out.println(test.subarraysDivByK2(A, K));
   }
 
   /**
