@@ -3,8 +3,11 @@ package xyz.zhuht.algorithm;
 import org.junit.Test;
 import xyz.zhuht.algorithm.medium.HeKeBeiKZhengChuDeZiShuZu;
 import xyz.zhuht.algorithm.medium.LRUHuanCunJiZhi;
+import xyz.zhuht.algorithm.medium.MeiRiWenDu;
 import xyz.zhuht.algorithm.medium.XunZhaoChongFuShu;
 import xyz.zhuht.algorithm.medium.ZiFuChuanJieMa;
+
+import java.util.Arrays;
 
 /**
  * zhuhaitao
@@ -14,6 +17,16 @@ import xyz.zhuht.algorithm.medium.ZiFuChuanJieMa;
 
 public class MediumTest {
 
+  /**
+   * 739. 每日温度
+   */
+  @Test
+  public void MeiRiWenDu() {
+    MeiRiWenDu test = new MeiRiWenDu();
+    int[] T = new int[]{73, 74, 75, 71, 69, 72, 76, 73};
+    int[] result = test.dailyTemperatures(T);
+    System.out.println(Arrays.toString(result));
+  }
 
   /**
    * 394.字符串解码
