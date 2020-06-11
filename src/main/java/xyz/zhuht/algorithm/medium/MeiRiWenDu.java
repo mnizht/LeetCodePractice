@@ -1,5 +1,8 @@
 package xyz.zhuht.algorithm.medium;
 
+import java.util.Deque;
+import java.util.LinkedList;
+
 /**
  * zhuhaitao
  * 2020/6/11 13:09
@@ -17,15 +20,18 @@ package xyz.zhuht.algorithm.medium;
 public class MeiRiWenDu {
   public int[] dailyTemperatures(int[] T) {
 
-    int[] res = new int[T.length];
-    for (int i = 0; i < T.length; i++) {
-      int cur = T[i];
-      int num = 1;
-      while (num < T.length - i && T[i + num] <= cur) {
-        num++;
+    int length = T.length;
+    int[] ans = new int[length];
+    Deque<Integer> stack = new LinkedList<Integer>();
+    for (int i = 0; i < length; i++) {
+      int temperature = T[i];
+      while (!stack.isEmpty() && temperature > T[stack.peek()]) {
+        int prevIndex = stack.pop();
+        ans[prevIndex] = i - prevIndex;
       }
-      res[i] = num == T.length - i ? 0 : num;
+      stack.push(i);
     }
-    return res;
+    return ans;
+
   }
 }
