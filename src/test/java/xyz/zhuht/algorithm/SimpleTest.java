@@ -1,6 +1,7 @@
 package xyz.zhuht.algorithm;
 
 import org.junit.Test;
+import xyz.zhuht.algorithm.simple.ErJinZhiQiuHe;
 import xyz.zhuht.algorithm.simple.YanZhengHuiWenChuan;
 
 /**
@@ -10,7 +11,15 @@ import xyz.zhuht.algorithm.simple.YanZhengHuiWenChuan;
 public class SimpleTest {
 
   @Test
-  public void YanZhengHuiWenChuanTest(){
+  public void ErJinZhiQiuHeTest() {
+    ErJinZhiQiuHe test = new ErJinZhiQiuHe();
+    String a = "11";
+    String b = "1";
+    System.out.println(test.addBinary(a, b));
+  }
+
+  @Test
+  public void YanZhengHuiWenChuanTest() {
     YanZhengHuiWenChuan test = new YanZhengHuiWenChuan();
     String str1 = "A man, a plan, a canal: Panama";
     String str2 = "race a car";
