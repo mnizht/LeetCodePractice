@@ -1,6 +1,7 @@
 package xyz.zhuht.algorithm;
 
 import org.junit.Test;
+import xyz.zhuht.algorithm.medium.DanCiChaiFen;
 import xyz.zhuht.algorithm.medium.HeKeBeiKZhengChuDeZiShuZu;
 import xyz.zhuht.algorithm.medium.LRUHuanCunJiZhi;
 import xyz.zhuht.algorithm.medium.MeiRiWenDu;
@@ -8,6 +9,7 @@ import xyz.zhuht.algorithm.medium.XunZhaoChongFuShu;
 import xyz.zhuht.algorithm.medium.ZiFuChuanJieMa;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * zhuhaitao
@@ -16,6 +18,17 @@ import java.util.Arrays;
  */
 
 public class MediumTest {
+
+  /**
+   * 139.单词拆分*/
+  @Test
+  public void DanCiChaiFenTest(){
+    DanCiChaiFen test = new DanCiChaiFen();
+    String s = "leetcode";
+    List<String> wordDict = Arrays.asList("leet","code");
+
+    System.out.println(test.wordBreak(s,wordDict));
+  }
 
   /**
    * 739. 每日温度
