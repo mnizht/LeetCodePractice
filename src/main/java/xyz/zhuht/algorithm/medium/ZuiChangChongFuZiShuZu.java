@@ -25,20 +25,16 @@ package xyz.zhuht.algorithm.medium;
  */
 public class ZuiChangChongFuZiShuZu {
   public int findLength(int[] A, int[] B) {
-    int result = 0;
-    for (int i = 0; i < A.length; i++) {
-      for (int j = 0; j < B.length; j++) {
-        int aPointer = i;
-        int bPointer = j;
-        int len = 0;
-        while (aPointer < A.length && bPointer < B.length && A[aPointer] == B[bPointer]) {
-          len++;
-          aPointer++;
-          bPointer++;
-        }
-        result = Math.max(result, len);
+    int a_len = A.length;
+    int b_len = B.length;
+    int ans = 0;
+    int dp[][] = new int[a_len + 1][b_len + 1];
+    for (int i = a_len - 1; i >= 0; i--) {
+      for (int j = b_len - 1; j >= 0; j--) {
+        dp[i][j] = A[i] == B[j] ? dp[i + 1][j + 1] + 1 : 0;
+        ans = Math.max(ans, dp[i][j]);
       }
     }
-    return result;
+    return ans;
   }
 }
