@@ -5,9 +5,11 @@ import xyz.zhuht.algorithm.medium.DanCiChaiFen;
 import xyz.zhuht.algorithm.medium.HeKeBeiKZhengChuDeZiShuZu;
 import xyz.zhuht.algorithm.medium.LRUHuanCunJiZhi;
 import xyz.zhuht.algorithm.medium.MeiRiWenDu;
+import xyz.zhuht.algorithm.medium.SanJiaoXingZuiXiaoLuJingHe;
 import xyz.zhuht.algorithm.medium.XunZhaoChongFuShu;
 import xyz.zhuht.algorithm.medium.ZiFuChuanJieMa;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -20,14 +22,30 @@ import java.util.List;
 public class MediumTest {
 
   /**
-   * 139.单词拆分*/
+   * 120.三角形最小路径和
+   */
   @Test
-  public void DanCiChaiFenTest(){
+  public void sanJiaoXingZuiXiaoLuJingHeTest() {
+    SanJiaoXingZuiXiaoLuJingHe test = new SanJiaoXingZuiXiaoLuJingHe();
+    List<List<Integer>> triangle = new ArrayList<>();
+    triangle.add(Arrays.asList(2));
+    triangle.add(Arrays.asList(3,4));
+    triangle.add(Arrays.asList(6,5,7));
+    triangle.add(Arrays.asList(4,1,8,3));
+    int ans = test.minimumTotal(triangle);
+    System.out.println(ans);
+  }
+
+  /**
+   * 139.单词拆分
+   */
+  @Test
+  public void DanCiChaiFenTest() {
     DanCiChaiFen test = new DanCiChaiFen();
     String s = "leetcode";
-    List<String> wordDict = Arrays.asList("leet","code");
+    List<String> wordDict = Arrays.asList("leet", "code");
 
-    System.out.println(test.wordBreak(s,wordDict));
+    System.out.println(test.wordBreak(s, wordDict));
   }
 
   /**
