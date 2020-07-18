@@ -2,6 +2,7 @@ package xyz.zhuht.algorithm;
 
 import org.junit.Test;
 import xyz.zhuht.algorithm.simple.ErJinZhiQiuHe;
+import xyz.zhuht.algorithm.simple.SouSuoChaRuWeiZhi;
 import xyz.zhuht.algorithm.simple.YanZhengHuiWenChuan;
 
 /**
@@ -9,6 +10,15 @@ import xyz.zhuht.algorithm.simple.YanZhengHuiWenChuan;
  * @date 2020/6/19 23:00
  */
 public class SimpleTest {
+
+  @Test
+  public void SouSuoChaRuWeiZhiTest() {
+    int[] nums = new int[]{1, 3, 5, 6};
+    int target = 7;
+    SouSuoChaRuWeiZhi test = new SouSuoChaRuWeiZhi();
+    int i = test.searchInsert(nums, target);
+    System.out.println(i);
+  }
 
   @Test
   public void ErJinZhiQiuHeTest() {
