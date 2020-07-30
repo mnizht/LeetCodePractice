@@ -7,6 +7,7 @@ import xyz.zhuht.algorithm.medium.LRUHuanCunJiZhi;
 import xyz.zhuht.algorithm.medium.MeiRiWenDu;
 import xyz.zhuht.algorithm.medium.SanJiaoXingZuiXiaoLuJingHe;
 import xyz.zhuht.algorithm.medium.XunZhaoChongFuShu;
+import xyz.zhuht.algorithm.medium.ZhengShuChaiFen;
 import xyz.zhuht.algorithm.medium.ZiFuChuanJieMa;
 
 import java.util.ArrayList;
@@ -22,6 +23,16 @@ import java.util.List;
 public class MediumTest {
 
   /**
+   * 343.整数拆分
+   */
+  @Test
+  public void ZhengShuChaiFenTest() {
+    ZhengShuChaiFen test = new ZhengShuChaiFen();
+    int i = test.integerBreak(10);
+    System.out.printf("ans = " + i);
+  }
+
+  /**
    * 120.三角形最小路径和
    */
   @Test
@@ -29,9 +40,9 @@ public class MediumTest {
     SanJiaoXingZuiXiaoLuJingHe test = new SanJiaoXingZuiXiaoLuJingHe();
     List<List<Integer>> triangle = new ArrayList<>();
     triangle.add(Arrays.asList(2));
-    triangle.add(Arrays.asList(3,4));
-    triangle.add(Arrays.asList(6,5,7));
-    triangle.add(Arrays.asList(4,1,8,3));
+    triangle.add(Arrays.asList(3, 4));
+    triangle.add(Arrays.asList(6, 5, 7));
+    triangle.add(Arrays.asList(4, 1, 8, 3));
     int ans = test.minimumTotal(triangle);
     System.out.println(ans);
   }
