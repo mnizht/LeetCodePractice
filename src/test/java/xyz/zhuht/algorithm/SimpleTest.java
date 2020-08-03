@@ -4,12 +4,21 @@ import org.junit.Test;
 import xyz.zhuht.algorithm.simple.ErJinZhiQiuHe;
 import xyz.zhuht.algorithm.simple.SouSuoChaRuWeiZhi;
 import xyz.zhuht.algorithm.simple.YanZhengHuiWenChuan;
+import xyz.zhuht.algorithm.simple.ZiFuChuanXiangJia;
 
 /**
  * @author haitao zhu
  * @date 2020/6/19 23:00
  */
 public class SimpleTest {
+
+  @Test
+  public void ZiFuChuanXiangJiaTest() {
+    ZiFuChuanXiangJia test = new ZiFuChuanXiangJia();
+    String num1 = "1234567890";
+    String num2 = "9876543210";
+    System.out.println(test.addStrings(num1, num2));
+  }
 
   @Test
   public void SouSuoChaRuWeiZhiTest() {
