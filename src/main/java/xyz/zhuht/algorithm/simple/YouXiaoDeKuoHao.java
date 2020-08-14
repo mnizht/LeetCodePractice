@@ -1,10 +1,5 @@
 package xyz.zhuht.algorithm.simple;
 
-import java.util.Deque;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Map;
-
 /**
  * @author haitao zhu
  * @date 2020/8/14 22:33
@@ -44,26 +39,36 @@ import java.util.Map;
  */
 public class YouXiaoDeKuoHao {
   public boolean isValid(String s) {
-    if (s.length() % 2 == 1) {
+    int length = s.length();
+    if ((length & 1) == 1) {
       return false;
     }
-    Map<Character, Character> pairs = new HashMap<>();
-    pairs.put(')', '(');
-    pairs.put(']', '[');
-    pairs.put('}', '{');
-
-    Deque<Character> stack = new LinkedList<>();
-    for (int i = 0; i < s.length(); i++) {
-      char ch = s.charAt(i);
-      if (pairs.containsKey(ch)) {
-        if (stack.isEmpty() || stack.peek() != pairs.get(ch)) {
-          return false;
-        }
-        stack.pop();
-      } else {
-        stack.push(ch);
+    char[] chars = new char[length + 1];
+    chars[0] = ' ';
+    int index = 1;
+    char[] chars1 = s.toCharArray();
+    for (Character c : chars1) {
+      switch (c) {
+        case ')':
+          if (chars[--index] != '(') {
+            return false;
+          }
+          break;
+        case ']':
+          if (chars[--index] != '[') {
+            return false;
+          }
+          break;
+        case '}':
+          if (chars[--index] != '{') {
+            return false;
+          }
+          break;
+        default:
+          chars[index++] = c;
       }
     }
-    return stack.isEmpty();
+    return index == 1;
+
   }
 }
