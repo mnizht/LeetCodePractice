@@ -2,6 +2,7 @@ package xyz.zhuht.algorithm;
 
 import org.junit.Test;
 import xyz.zhuht.algorithm.medium.DanCiChaiFen;
+import xyz.zhuht.algorithm.medium.DiZengZiXuLie;
 import xyz.zhuht.algorithm.medium.HeKeBeiKZhengChuDeZiShuZu;
 import xyz.zhuht.algorithm.medium.LRUHuanCunJiZhi;
 import xyz.zhuht.algorithm.medium.MeiRiWenDu;
@@ -21,6 +22,18 @@ import java.util.List;
  */
 
 public class MediumTest {
+
+  /**
+   * 491.递增子序列
+   */
+  @Test
+  public void DiZengZiXuLieTest() {
+    DiZengZiXuLie test = new DiZengZiXuLie();
+    int[] nums = {3, 9, -9, 5, -2, 0};
+    List<List<Integer>> subsequences = test.findSubsequences(nums);
+    System.out.println(subsequences.toString());
+  }
+
 
   /**
    * 343.整数拆分
