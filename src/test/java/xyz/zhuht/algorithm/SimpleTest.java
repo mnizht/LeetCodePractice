@@ -2,6 +2,7 @@ package xyz.zhuht.algorithm;
 
 import org.junit.Test;
 import xyz.zhuht.algorithm.simple.ErJinZhiQiuHe;
+import xyz.zhuht.algorithm.simple.FanZhuanZiFuChuanZhongDeDanCiSan;
 import xyz.zhuht.algorithm.simple.SouSuoChaRuWeiZhi;
 import xyz.zhuht.algorithm.simple.YanZhengHuiWenChuan;
 import xyz.zhuht.algorithm.simple.ZiFuChuanXiangJia;
@@ -11,6 +12,13 @@ import xyz.zhuht.algorithm.simple.ZiFuChuanXiangJia;
  * @date 2020/6/19 23:00
  */
 public class SimpleTest {
+
+  @Test
+  public void FanZhuanZiFuChuanZhongDeDanCi() {
+    FanZhuanZiFuChuanZhongDeDanCiSan test = new FanZhuanZiFuChuanZhongDeDanCiSan();
+    String s = "Let's  take   LeetCode contest";
+    System.out.println(test.reverseWords(s));
+  }
 
   @Test
   public void ZiFuChuanXiangJiaTest() {
