@@ -1,9 +1,7 @@
 package xyz.zhuht.algorithm.medium;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.Arrays;
+import java.util.Comparator;
 
 /**
  * @author haitao zhu
@@ -21,16 +19,7 @@ import java.util.Map;
  */
 public class ZuiJieJinYuanDianDeKGeDian {
   public int[][] kClosest(int[][] points, int K) {
-    Map<Integer, Integer> c = new HashMap<>(points.length);
-    for (int i = 0; i < points.length; i++) {
-      c.put(i, points[i][0] * points[i][0] + points[i][1] * points[i][1]);
-    }
-    List<Map.Entry<Integer, Integer>> list = new ArrayList<>(c.entrySet());
-    list.sort(Map.Entry.comparingByValue());
-    int[][] ans = new int[K][];
-    for (int i = 0; i < K; i++) {
-      ans[i] = points[list.get(i).getKey()];
-    }
-    return ans;
+    Arrays.sort(points, Comparator.comparingInt((array) -> array[0] * array[0] + array[1] * array[1]));
+    return Arrays.copyOfRange(points, 0, K);
   }
 }
